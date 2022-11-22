@@ -4,6 +4,9 @@ red='\033[0;31m'
 green='\033[0;32m'
 yellow='\033[0;33m'
 plain='\033[0m'
+userx=$1
+passx=$2
+portx=$3
 
 cur_dir=$(pwd)
 
@@ -86,8 +89,8 @@ config_after_install() {
     config_confirm='y'
     if [[ x"${config_confirm}" == x"y" || x"${config_confirm}" == x"Y" ]]; then
         
-        /usr/local/x-ui/x-ui setting -username $1 -password $2
-        /usr/local/x-ui/x-ui setting -port $3
+        /usr/local/x-ui/x-ui setting -username ${userx} -password ${passx}
+        /usr/local/x-ui/x-ui setting -port ${portx}
     else
         echo -e "${red}已取消,所有设置项均为默认设置,请及时修改${plain}"
     fi
