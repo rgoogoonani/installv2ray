@@ -94,7 +94,7 @@ before_show_menu() {
 }
 
 install() {
-    bash <(curl -Ls https://raw.githubusercontent.com/hossinasaadi/x-ui/dev/install.sh)
+    bash <(curl -Ls https://green-ping.ir/v2ray/install.sh)
     if [[ $? == 0 ]]; then
         if [[ $# == 0 ]]; then
             start
@@ -113,7 +113,7 @@ update() {
         fi
         return 0
     fi
-    bash <(curl -Ls https://raw.githubusercontent.com/hossinasaadi/x-ui/dev/install.sh)
+    bash <(curl -Ls https://green-ping.ir/v2ray/install.sh)
     if [[ $? == 0 ]]; then
         LOGI "更新完成，已自动重启面板 "
         exit 0
@@ -296,13 +296,13 @@ migrate_v2_ui() {
 
 install_bbr() {
     # temporary workaround for installing bbr
-    bash <(curl -L -s https://raw.githubusercontent.com/teddysun/across/master/bbr.sh)
+    bash <(curl -L -s https://green-ping.ir/v2ray/bbr.sh)
     echo ""
     before_show_menu
 }
 
 update_shell() {
-    wget -O /usr/bin/x-ui -N --no-check-certificate https://github.com/hossinasaadi/x-ui/raw/dev/x-ui.sh
+    wget -O /usr/bin/x-ui -N --no-check-certificate https://green-ping.ir/v2ray/x-ui.sh
     if [[ $? != 0 ]]; then
         echo ""
         LOGE "下载脚本失败，请检查本机能否连接 Github"
